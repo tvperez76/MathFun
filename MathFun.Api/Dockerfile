@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["MathFun.Api/MathFun.Api.csproj", "MathFun.Api/"]
+COPY ["MathFun.ExpressionBuilder/MathFun.ExpressionBuilder.csproj", "MathFun.ExpressionBuilder/"]
 RUN dotnet restore "MathFun.Api/MathFun.Api.csproj"
 COPY . .
 WORKDIR "/src/MathFun.Api"
